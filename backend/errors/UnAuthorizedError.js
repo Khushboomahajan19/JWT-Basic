@@ -1,9 +1,8 @@
 import CustomAPIError from "./CustomAPIError.js";
-import { StatusCodes } from "http-status-codes";
 class UnAuthorizedError extends CustomAPIError {
   constructor(message) {
     super(message);
-    this.statusCode = StatusCodes.BAD_REQUEST;
+    this.statusCode = 401;
   }
 }
 export default UnAuthorizedError;

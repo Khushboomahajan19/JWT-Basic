@@ -5,7 +5,7 @@ export const login = (req, res) => {
   console.log(req.body);
   const { username, password } = req.body;
   if (!username || !password) {
-    throw new BadRequestError("Please provide username and password", 400);
+    throw new BadRequestError("Please provide username and password");
   }
   const id = new Date().getDate();
   const token = jwt.sign({ id, username }, process.env.JWT_SECRET, {
